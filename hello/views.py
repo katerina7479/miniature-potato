@@ -13,9 +13,8 @@ def index(request):
 
 
 @login_required
-def times(request):
-    times = int(os.environ.get('TIMES',3))
-    return HttpResponse('Hello! ' * times)
+def home(request):
+    return HttpResponse('<pre>This is your home</pre>')
 
 
 @login_required
