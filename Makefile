@@ -10,3 +10,8 @@ shell:
 logs:
 	heroku logs --tail
 
+lock:
+	pipenv lock
+
+push:
+	git push heroku master
