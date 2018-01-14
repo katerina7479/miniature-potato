@@ -10,9 +10,8 @@ django = "*"
 gunicorn = "*"
 django-heroku = "*"
 requests = "*"
-social-auth-app-django = "*"
 python3-openid = "*"
-
+social-auth-app-django = "*"
 
 [requires]
 
