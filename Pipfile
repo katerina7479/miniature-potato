@@ -11,7 +11,7 @@ gunicorn = "*"
 django-heroku = "*"
 requests = "*"
 social-auth-app-django = "*"
-"python3-openid" = "*"
+python3-openid = "*"
 
 
 [requires]
