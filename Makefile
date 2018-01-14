@@ -22,5 +22,8 @@ config:
 list-addons:
 	heroku addons
 
+make-migrate:
+	python manage.py makemigrations
+
 migrate:
 	heroku run python manage.py migrate
