@@ -5,7 +5,7 @@ open:
 	heroku open
 
 shell:
-	pipenv shell -c
+	pipenv shell
 
 logs:
 	heroku logs --tail
@@ -15,3 +15,12 @@ lock:
 
 push:
 	git push heroku master
+
+config:
+	heroku config
+
+list-addons:
+	heroku addons
+
+migrate:
+	heroku run python manage.py migrate
