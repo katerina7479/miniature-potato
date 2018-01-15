@@ -1,5 +1,5 @@
 local:
-	heroku local web
+	heroku local
 
 open:
 	heroku open

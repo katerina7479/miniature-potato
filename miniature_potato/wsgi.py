@@ -12,4 +12,5 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "miniature_potato.settings")
 
 from django.core.wsgi import get_wsgi_application
 
+print("Starting App")
 application = get_wsgi_application()
