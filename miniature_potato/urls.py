@@ -3,10 +3,15 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 from rest_framework.authtoken import views as drf_views
+from rest_framework import routers
 
 admin.autodiscover()
 
 import miniature_potato.views as app_views
+import miniature_potato.api_views as api_views
+
+router = routers.DefaultRouter()
+router.register(r'users', api_views.TodoViewSet)
 
 
 urlpatterns = [
@@ -20,5 +25,5 @@ urlpatterns = [
     url(r'^settings/password/$', app_views.password, name='password'),
     url(r'^home', app_views.home, name='home'),
     url(r'^db', app_views.db, name='db'),
-
+    url(r'^api/', include(router.urls)),
 ]
