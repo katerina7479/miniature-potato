@@ -1,33 +1,28 @@
-export const setSearchText = (searchText) => {
-  return {
-    type: 'SET_SEARCH_TEXT',
-    searchText
-  }
-};
+import api from 'Api/TodoAPI';
+import { createAsyncAction } from 'Utils/helpers';
 
-export const addTodo = (text) => {
-  return {
-    type: 'ADD_TODO',
-    text
-  };
-};
+export const FETCH_TODOS_REQUEST = 'FETCH_TODOS_REQUEST';
+export const FETCH_TODOS_SUCCESS = 'FETCH_TODOS_SUCCESS';
+export const FETCH_TODOS_FAILURE = 'FETCH_TODOS_FAILURE';
 
-export const addTodos = (todos) => {
-  return {
-    type: 'ADD_TODOS',
-    todos
-  };
-};
 
-export const toggleShowCompleted = () => {
-  return {
-    type: 'TOGGLE_SHOW_COMPLETED'
-  }
-};
+export const getTodosRequest = () => ({
+  type: FETCH_TODOS_REQUEST,
+});
 
-export const toggleTodo = (id) => {
-  return {
-    type: 'TOGGLE_TODO',
-    id
-  }
-};
+export const getTodosSuccess = response => ({
+  type: FETCH_TODOS_SUCCESS,
+  payload: response.data
+});
+
+export const getTodosFailure = response => ({
+  type: FETCH_TODOS_FAILURE,
+  payload: response.error,
+});
+
+export const fetchTodos = createAsyncAction(
+  getTodosRequest,
+  getTodosSuccess,
+  getTodosFailure,
+  api.getTodos,
+);

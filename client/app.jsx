@@ -1,31 +1,23 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-//var TodoApp = require('Components/TodoApp');
-var { Provider } = require('react-redux');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-//var actions = require('Actions');
-//var store = require('configureStore').configure();
-//var TodoAPI = require('TodoAPI');
+import { applyMiddleware, compose, createStore } from 'redux';
+import promise from 'redux-promise';
 
-// store.subscribe(() => {
-//   var state = store.getState();
-//   console.log('New State', state);
-//   TodoAPI.setTodos(state.todos);
-// });
+import TodoApp from 'Components/TodoApp';
+import CoreReducer from 'Reducers/reducers';
 
-//dispatch existing items
-// var initialTodos = TodoAPI.getTodos();
-// store.dispatch(actions.addTodos(initialTodos));
-
-// Load foundation
-//$(document).foundation();
-
-//Load css
-//require('style!css!foundation-sites/dist/foundation.min.css');
-//require('style!css!sass!applicationStyle');
+const middleware = [promise];
+const store = createStore(
+	CoreReducer,
+	(window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose)(applyMiddleware(...middleware)),
+);
 
 // Call it
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('app')
+	<Provider store={store}>
+		<TodoApp/>
+	</Provider>,
+  	document.getElementById('app')
 );

@@ -1,22 +1,27 @@
-var React = require('react')
-var { connect } = require('react-redux');
+var React = require('react');
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 var moment = require('moment');
-var actions = require('Actions');
+var actions = require('Actions/actions');
 
+class Todo extends React.Component {
 
-export var Todo = React.createClass({
+  static propTypes = {
+    id: PropTypes.number,
+    text: PropTypes.string,
+    completed: PropTypes.bool,
+    toggleTodoCompleted: PropTypes.function.isRequired,
+  };
 
-  render: function () {
-    var { id, text, completed, createdAt, completedAt, dispatch } = this.props;
-    var todoClassName = completed ? 'todo todo-completed' : 'todo';
-    var renderDate = (timestamp) => {
-      return moment.unix(timestamp).format('MMM Do, YYYY h:mm:ss a')
-    };
+  render() {
+    var { id, text, completed } = this.props;
+
     var renderCompleted = () => {
       if (completed) {
         return <p className="todo_subtext">Completed: {renderDate(completedAt)}</p>
       }
-    }
+    };
     return (
       <div className={todoClassName} onClick={() => {
         dispatch(actions.toggleTodo(id));
@@ -26,14 +31,11 @@ export var Todo = React.createClass({
         </div>
         <div>
           <p>{text}</p>
-          <p className="todo_subtext">
-            Created: {renderDate(createdAt)}
-          </p>
           {renderCompleted()}
         </div>
       </div>
     );
   }
-});
+}
 
-export default connect()(Todo);
+export default Todo;

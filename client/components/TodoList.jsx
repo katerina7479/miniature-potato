@@ -1,35 +1,62 @@
-var React = require('react');
-var { connect } = require('react-redux');
-import Todo from 'Todo';
-import TodoAPI from 'TodoAPI';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import { fetchTodos } from 'Actions/actions';
+import Todo from 'Components/Todo';
 
 
-export var TodoList = React.createClass({
-  render: function () {
-    var { todos, showCompleted, searchText } = this.props;
+class TodoList extends React.Component {
+  static defaultProps = {
+    todoList: undefined,
+    error: undefined,
+    isFetching: true,
+  };
 
-    var renderTodos = () => {
-      if (todos.length === 0) {
-        return (
-          <p className="container_message">Nothing To Do</p>
-        )
-      }
-      return TodoAPI.filterTodos(todos, showCompleted, searchText).map((todo) => {
-        return (
+  static propTypes = {
+    fetchTodos: PropTypes.func.isRequired,
+    todoList: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      text: PropTypes.string,
+      completed: PropTypes.bool
+    })),
+    isFetching: PropTypes.bool,
+    error: PropTypes.string,
+  };
+
+  componentWillMount = () => {
+    this.props.fetchTodos();
+  };
+
+  getContent = () => {
+    var { todoList } = this.props;
+    if (!todoList) {
+      return <p className="container_message">Nothing To Do</p>
+    }
+    return todoList.map((todo) => {
+      return (
           <Todo key={ todo.id } { ...todo } />
-        )
-      });
-    };
+      )
+    });
+  };
+
+  render() {
     return (
       <div>
-        {renderTodos()}
+        {this.getContent()}
       </div>
     );
   }
+}
+
+
+const mapDispatchToProps = dispatch => ({
+  fetchTodos: fetchTodos(dispatch),
 });
 
+const mapStateToProps = (state, ownProps) => state.todos;
+
 export default connect(
-  (state) => {
-    return state;
-  }
+    mapStateToProps,
+    mapDispatchToProps,
 )(TodoList);

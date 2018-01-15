@@ -45,9 +45,11 @@ module.exports = {
     ],
     alias: {
       Actions: path.resolve(__dirname, 'client/actions'),
+      Api: path.resolve(__dirname, 'client/api'),
       Components: path.resolve(__dirname, 'client/components'),
       Navigation: path.resolve(__dirname, 'client/components/navigation'),
-      Reducers: path.resolve(__dirname, 'client/reducers')
+      Reducers: path.resolve(__dirname, 'client/reducers'),
+      Utils: path.resolve(__dirname, 'client/utils')
     },
     extensions: ['.js', '.jsx', '.json']
   },
@@ -56,3 +58,8 @@ module.exports = {
 
   devtool: 'source-map'
 };
+
+new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery'
+});

@@ -1,6 +1,6 @@
-var React = require('react')
+var React = require('react');
 var { connect } = require('react-redux');
-var actions = require('Actions');
+var actions = require('Actions/actions');
 
 
 export var Search = React.createClass({
