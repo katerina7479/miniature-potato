@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "airbnb"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype",
+    "import"
+  ],
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    },
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "import/extensions": [
+    "error",
+    "always",
+    {
+      "js": "never",
+      "jsx": "never"
+    }
+  ]
+}

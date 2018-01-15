@@ -20,3 +20,7 @@ kill:
 	heroku repo:purge_cache
 	heroku repo:reset
 	git push heroku master
+
+watch:
+	-pkill -f webpack
+	webpack --progress --colors --watch &

@@ -12,8 +12,7 @@ from .models import Greeting
 
 
 def index(request):
-    text = 'This is the index'
-    return HttpResponse('<pre>' + text + '</pre>')
+    return render(request, 'index.html')
 
 
 @login_required
