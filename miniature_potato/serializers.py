@@ -10,17 +10,11 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'username', 'email')
 
 
-class TodoSerializer(serializers.Serializer):
-    id = serializers.IntegerField(read_only=True)
-    text = serializers.CharField(required=True)
-    createdAt = serializers.DateTimeField(required=False)
-    completedAt = serializers.DateTimeField(required=False, allow_null=True)
-    user = serializers.PrimaryKeyRelatedField(
-        # set it to read_only as we're handling the writing part ourselves
-        read_only=True,
-        required=False
+class TodoSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
     )
 
-    def perform_create(self, serializer):
-        print(self.request)
-        serializer.save(user=self.request.user)
+    class Meta:
+        model = Todo
+        fields = ('id', 'text', 'createdAt', 'completedAt', 'user')

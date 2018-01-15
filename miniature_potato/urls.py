@@ -11,7 +11,7 @@ import miniature_potato.views as app_views
 import miniature_potato.api_views as api_views
 
 router = routers.DefaultRouter()
-router.register(r'todos', api_views.TodoViewSet)
+router.register(r'todos', api_views.TodoViewSet, base_name='todos')
 router.register(r'users', api_views.UserViewSet)
 
 
@@ -26,4 +26,6 @@ urlpatterns = [
     url(r'^settings/password/$', app_views.password, name='password'),
     url(r'^home', app_views.home, name='home'),
     url(r'^api/', include(router.urls)),
+    #url(r'^api/todos/$', api_views.TodoList.as_view()),
+    #url(r'^api/todos/(?P<pk>[0-9]+)/$', api_views.TodoDetail.as_view()),
 ]

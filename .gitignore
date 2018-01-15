@@ -5,6 +5,7 @@ env/
 
 # testing
 /coverage
+/log
 
 # production
 /build

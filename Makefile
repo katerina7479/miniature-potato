@@ -1,5 +1,5 @@
 local:
-	heroku local
+	heroku local -f Procfile.local
 
 open:
 	heroku open

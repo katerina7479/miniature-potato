@@ -1,20 +1,17 @@
 
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 
 from miniature_potato.models import Todo, User
 from miniature_potato.serializers import TodoSerializer, UserSerializer
-from rest_framework import serializers
 
 
 class TodoViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    user = serializers.HiddenField(
-        default=serializers.CurrentUserDefault()
-    )
-    queryset = Todo.objects.all().order_by('-createdAt')
     serializer_class = TodoSerializer
+
+    def get_queryset(self):
+        print("User id", self.request.user.id)
+        queryset = Todo.objects.all().filter(user=self.request.user)
+        return queryset
 
 
 class UserViewSet(viewsets.ModelViewSet):
