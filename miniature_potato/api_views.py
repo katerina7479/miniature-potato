@@ -1,9 +1,8 @@
 
-from miniature_potato.models import Todo
-
 from rest_framework import viewsets
-from miniature_potato.serializers import TodoSerializer
 
+from miniature_potato.models import Todo
+from miniature_potato.serializers import TodoSerializer
 
 
 class TodoViewSet(viewsets.ModelViewSet):

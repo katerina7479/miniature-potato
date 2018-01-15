@@ -11,7 +11,8 @@ import miniature_potato.views as app_views
 import miniature_potato.api_views as api_views
 
 router = routers.DefaultRouter()
-router.register(r'users', api_views.TodoViewSet)
+router.register(r'todos', api_views.TodoViewSet)
+print(router.urls)
 
 
 urlpatterns = [
