@@ -10,7 +10,7 @@ logs:
 push:
 	git push heroku master
 
-make-migrate:
+schemamigrate:
 	python manage.py makemigrations
 
 migrate:

@@ -24,6 +24,5 @@ urlpatterns = [
     url(r'^settings/$', app_views.settings, name='settings'),
     url(r'^settings/password/$', app_views.password, name='password'),
     url(r'^home', app_views.home, name='home'),
-    url(r'^db', app_views.db, name='db'),
     url(r'^api/', include(router.urls)),
 ]
