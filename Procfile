@@ -1,1 +1,1 @@
-web: gunicorn hello.wsgi
+web: gunicorn miniature_potato.wsgi
