@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-
+import 'bootstrap';
 import { applyMiddleware, compose, createStore } from 'redux';
 import promise from 'redux-promise';
 

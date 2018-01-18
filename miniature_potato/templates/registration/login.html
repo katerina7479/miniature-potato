@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-  <br>
-  <p><strong>-- OR --</strong></p>
-  <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
-  <a href="{% url 'social:begin' 'twitter' %}">Login with Twitter</a><br>
-  <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+	<div class="container">
+		<form method="post" class="form-signin">
+			<h2 class="form-signin-heading">Sign In</h2>
+			<div class="form-group">
+				{% csrf_token %}
+				{{ form.as_p }}
+			</div>
+			<button type="submit" class="btn btn-lg btn-primary btn-block">Sign In</button>
+		</form>
+		<div class="form-signin">
+			<h2 class="form-signin-heading center-block"> - Or You Can - </h2>
+			<a role="button" class="btn btn-primary btn-lg btn-block" href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+			<a role="button" class="btn btn-info btn-lg btn-block" href="{% url 'social:begin' 'twitter' %}">Login with Twitter</a>
+			<a role="button" class="btn btn-success btn-lg btn-block" href="{% url 'social:begin' 'github' %}">Login with GitHub</a>
+		</div>
+	</div>
 {% endblock %}

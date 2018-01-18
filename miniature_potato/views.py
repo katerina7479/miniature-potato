@@ -14,7 +14,7 @@ def index(request):
 
 @login_required
 def home(request):
-    return HttpResponse('<pre>This is your home</pre>')
+    return render(request, 'home.html')
 
 
 @login_required
