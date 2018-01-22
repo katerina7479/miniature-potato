@@ -29,6 +29,11 @@ html, body {
   line-height: 0;
 }
 
+.spacer-4x {
+  margin: 60px 0;
+  line-height: 0;
+}
+
 .spacer-line {
   width: 50px;
   line-height: 0;
@@ -297,12 +302,20 @@ html, body {
   color: black !important;
 }
 
+.text-blue {
+  color: #3f50b5 !important;
+}
+
+.text-grey {
+  color: #cccccc !important;
+}
+
 .text-primary {
   color: #3f50b5 !important;
 }
 
 .text-secondary {
-  color: #eff1f2 !important;
+  color: #ffccaa !important;
 }
 
 .text-success {
