@@ -1,30 +1,52 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodo } from 'Actions/post';
+import { addTodo } from 'Actions/actions';
 
 
 class Controls extends React.Component {
 
+  static propTypes = {
+    addTodo: PropTypes.func.isRequired,
+  };
+
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      text: undefined
+    }
+  }
+
   onSubmit = (event) => {
     event.preventDefault();
-    var text = this.refs.todoText.value;
-
+    const { addTodo } = this.props;
+    const { text } = this.state;
     if (text.length > 0) {
-      this.refs.todoText.value = null;
-      addTodo(text);
+      addTodo({text});
     } else {
-      this.refs.todoText.focus();
+      this.setState({
+        text: undefined
+      });
     }
+  };
+
+  handleChange = (event) => {
+    this.setState({text: event.target.value});
   };
 
   render() {
     return (
-      <div className="container_footer">
         <form onSubmit={this.onSubmit}>
-          <input type="text" ref="todoText" placeholder="Add Todo" />
+          <div className="form-group row p-3">
+          <input
+              type="text"
+              placeholder="Add Todo"
+              value={this.state.text}
+              onChange={this.handleChange}
+          />
           <button type="submit" className="button expanded">Submit</button>
+          </div>
         </form>
-      </div>
     );
   }
 }

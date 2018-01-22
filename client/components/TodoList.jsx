@@ -7,44 +7,68 @@ import Todo from 'Components/Todo';
 
 
 class TodoList extends React.Component {
+
   static defaultProps = {
-    todoList: undefined,
+    todos: undefined,
     error: undefined,
     isFetching: true,
   };
 
   static propTypes = {
-    fetchTodos: PropTypes.func.isRequired,
-    todoList: PropTypes.arrayOf(PropTypes.shape({
+    todos: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number,
       text: PropTypes.string,
-      completed: PropTypes.bool
+      createdAt: PropTypes.string,
+      completedAt: PropTypes.string
     })),
     isFetching: PropTypes.bool,
-    error: PropTypes.string,
+    isSubmitting: PropTypes.bool,
+    error: PropTypes.obj,
+    fetchTodos: PropTypes.func.isRequired,
   };
+
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      updated: false
+    }
+  }
 
   componentWillMount = () => {
-    this.props.fetchTodos();
+    const { fetchTodos } = this.props;
+    fetchTodos();
   };
 
-  getContent = () => {
-    var { todoList } = this.props;
-    if (!todoList) {
-      return <p className="container_message">Nothing To Do</p>
+  componentWillReceiveProps = (nextProps) => {
+    const {isSubmitting, fetchTodos} = nextProps;
+    console.log('Receiving New props', this.props);
+    if(isSubmitting === false){
+      console.log('Kicking off a receive props get');
+      fetchTodos();
     }
-    return todoList.map((todo) => {
-      return (
-          <Todo key={ todo.id } { ...todo } />
-      )
+  };
+
+  renderToDo = () => {
+    var { todos } = this.props;
+    if (!todos) {
+      return null
+    }
+    if (todos.length === 0) {
+      return <p className="container_message">Nothing to do, add something!</p>
+    }
+    return todos.map((todo) => {
+        return (
+            <Todo key={ todo.id } { ...todo } />
+        )
     });
   };
 
   render() {
+    console.log("Render list", this.props.todos);
     return (
-      <div>
-        {this.getContent()}
-      </div>
+        <div>
+            {this.renderToDo()}
+        </div>
     );
   }
 }

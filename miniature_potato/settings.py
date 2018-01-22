@@ -167,3 +167,4 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated'
     ]
 }
+CSRF_USE_SESSIONS = False

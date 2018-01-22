@@ -9,11 +9,27 @@ class TodoApp extends React.Component {
 
 	render() {
 		return (
-			<div className="card w-50 mx-auto p-3 mt-1">
-				<div className="card-block">
-					<h1 className="card-title">My Todos</h1>
-					<Controls />
-					<TodoList />
+			<div className="container-fluid">
+				<div className="row justify-content-md-center mt-3">
+					<div className="col"></div>
+					<div className="col">
+						<h1 className="title">My Todos</h1>
+					</div>
+						<div className="col"></div>
+				</div>
+				<div className="row">
+					<div className="col-lg-3"></div>
+					<div className="col-lg-6">
+						<Controls />
+					</div>
+					<div className="col-lg-3"></div>
+				</div>
+				<div className="row">
+					<div className="col-lg-3"></div>
+					<div className="col-lg-6">
+						<TodoList />
+					</div>
+					<div className="col-lg-3"></div>
 				</div>
 			</div>
 		)
