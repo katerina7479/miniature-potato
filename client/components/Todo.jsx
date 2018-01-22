@@ -5,13 +5,14 @@ import { connect } from 'react-redux';
 var moment = require('moment');
 var actions = require('Actions/actions');
 
+
 class Todo extends React.Component {
 
   static propTypes = {
     id: PropTypes.number,
     text: PropTypes.string,
     completed: PropTypes.bool,
-    toggleTodoCompleted: PropTypes.function.isRequired,
+    toggleTodoCompleted: PropTypes.function,
   };
 
   render() {

@@ -1,25 +1,23 @@
 import React from 'react';
 import TodoList from 'Components/TodoList';
-//import Controls from 'Components/Controls';
+
+import Controls from 'Components/Controls';
 //import Search from 'Components/Search';
 
 
 class TodoApp extends React.Component {
 
-  render() {
-    return (
-      <div>
-        <h1 className="page-title">Todo App</h1>
-        <div className="row">
-          <div className="column large-5 medium-6 small-centered">
-              <div className="container">
-                <TodoList />
-              </div>
-          </div>
-      </div>
-    </div>
-    )
-  }
+	render() {
+		return (
+			<div className="card w-50 mx-auto p-3 mt-1">
+				<div className="card-block">
+					<h1 className="card-title">My Todos</h1>
+					<Controls />
+					<TodoList />
+				</div>
+			</div>
+		)
+	}
 }
 
 export default TodoApp;

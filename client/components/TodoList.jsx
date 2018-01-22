@@ -54,7 +54,7 @@ const mapDispatchToProps = dispatch => ({
   fetchTodos: fetchTodos(dispatch),
 });
 
-const mapStateToProps = (state, ownProps) => state.todos;
+const mapStateToProps = (state, ownProps) => state.todo;
 
 export default connect(
     mapStateToProps,

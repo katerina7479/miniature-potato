@@ -1,22 +1,23 @@
-var React = require('react');
-var { connect } = require('react-redux');
-var actions = require('Actions/actions');
+import React from 'react'
+import { connect } from 'react-redux';
+import { addTodo } from 'Actions/post';
 
 
-export var Controls = React.createClass({
-  onSubmit: function (event) {
-    var { dispatch } = this.props;
+class Controls extends React.Component {
+
+  onSubmit = (event) => {
     event.preventDefault();
     var text = this.refs.todoText.value;
 
     if (text.length > 0) {
       this.refs.todoText.value = null;
-      dispatch(actions.addTodo(text))
+      addTodo(text);
     } else {
       this.refs.todoText.focus();
     }
-  },
-  render: function () {
+  };
+
+  render() {
     return (
       <div className="container_footer">
         <form onSubmit={this.onSubmit}>
@@ -26,6 +27,15 @@ export var Controls = React.createClass({
       </div>
     );
   }
+}
+
+const mapDispatchToProps = dispatch => ({
+  addTodo: addTodo(dispatch),
 });
 
-export default connect()(Controls);
+const mapStateToProps = (state, ownProps) => state.todo;
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(Controls);

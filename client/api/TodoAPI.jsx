@@ -14,7 +14,8 @@ const api = {
     return axios.get(`/api/todos/$(todoId)`);
   },
 
-  createTodo(data){
+  addTodo(data){
+    console.log('Posting', data);
     return axios.post('/api/todos/', { data });
   },
 
