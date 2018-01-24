@@ -158,6 +158,7 @@ STATICFILES_DIRS = (
 
 django_heroku.settings(locals())
 
+
 # Login URLS
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
