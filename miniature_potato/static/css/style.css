@@ -2519,13 +2519,13 @@ label.btn-file {
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("../images/menu.png");
+  background-image: url("../img/menu.png");
   width: 32px;
   height: 32px;
 }
 
 .navbar-inverse .navbar-toggler-icon {
-  background-image: url("../images/menu-inverse.png");
+  background-image: url("../img/menu-inverse.png");
   width: 32px;
   height: 32px;
 }
@@ -2889,15 +2889,15 @@ nav .btn-xs {
 }
 
 .page-header.has-background.bg-1 {
-  background-image: url("../images/placeholder-1200.jpg");
+  background-image: url("../img/placeholder-1200.jpg");
 }
 
 .page-header.has-background.bg-2 {
-  background-image: url("../images/placeholder-1200.jpg");
+  background-image: url("../img/placeholder-1200.jpg");
 }
 
 .page-header.has-background.bg-3 {
-  background-image: url("../images/placeholder-1200.jpg");
+  background-image: url("../img/placeholder-1200.jpg");
 }
 
 /*------- end of headers -------*/
@@ -2978,7 +2978,7 @@ nav .btn-xs {
 }
 
 #facts.has-background-image {
-  background-image: url("../images/placeholder-1200.jpg");
+  background-image: url("../img/placeholder-1200.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -3583,7 +3583,7 @@ a.expand {
 }
 
 #testimonials-slider {
-  background: url("../images/placeholder-800.jpg");
+  background: url("../img/placeholder-800.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -3726,7 +3726,7 @@ footer p {
 
 /*--- basic template ---*/
 header.basic-template {
-  background: url("../images/placeholder-800.jpg") no-repeat;
+  background: url("../img/placeholder-800.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -3739,7 +3739,7 @@ header.basic-template .container {
 /*--- end of basic template ---*/
 /*--- business template ---*/
 header.business-template {
-  background: url("../images/placeholder-800.jpg") no-repeat;
+  background: url("../img/placeholder-800.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -3756,7 +3756,7 @@ header.business-template .header-content {
 /*--- end of business template ---*/
 /*--- portfolio template ---*/
 header.portfolio-template {
-  background: url("../images/placeholder-800.jpg") no-repeat;
+  background: url("../img/placeholder-800.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -3767,7 +3767,7 @@ header.portfolio-template .container {
 }
 
 #services.has-background {
-  background: url("../images/placeholder-800.jpg") no-repeat;
+  background: url("../img/placeholder-800.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   padding: 50px 0;
@@ -3776,7 +3776,7 @@ header.portfolio-template .container {
 /*--- end of portfolio template ---*/
 /*--- blog template ---*/
 .featured-posts {
-  background: url("../images/placeholder-800.jpg") no-repeat;
+  background: url("../img/placeholder-800.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -3784,7 +3784,7 @@ header.portfolio-template .container {
 /*--- end of blog template ---*/
 /*--- landing page template ---*/
 header.landing-page-template {
-  background: url("../images/placeholder-800.jpg") no-repeat;
+  background: url("../img/placeholder-800.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -3802,7 +3802,7 @@ header.landing-page-template .container {
 /*--- end of landing page template ---*/
 /*--- shop template ---*/
 header.shop-template {
-  background: url("../images/placeholder-800.jpg") no-repeat;
+  background: url("../img/placeholder-800.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -3819,7 +3819,7 @@ header.shop-template .header-content {
 /*--- end of shop template ---*/
 /*--- 404 template ---*/
 body.page-not-found {
-  background: url("../images/placeholder-800.jpg") no-repeat;
+  background: url("../img/placeholder-800.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -3912,66 +3912,7 @@ body.page-not-found {
 }
 
 /*--- end of preloader ---*/
-/*--- index / demo page ---*/
-body.demo {
-  background: #ebebeb;
-}
 
-header.demo-page {
-  background: url("../images/demo-bg.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-header.demo-page .container {
-  position: relative;
-  padding: 150px 0;
-}
-
-.demo-item {
-  background: white;
-  border: 1px solid #d4d8da;
-  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  -webkit-transition: ease-in-out 0.3s;
-  -moz-transition: ease-in-out 0.3s;
-  -o-transition: ease-in-out 0.3s;
-  transition: ease-in-out 0.3s;
-  padding: 1rem;
-}
-
-.demo-item h5 {
-  font-size: 1rem;
-}
-
-.portfolio-filter.list-inline li {
-  padding: 0;
-  display: inline-block;
-}
-
-.portfolio-filter a {
-  color: #555555;
-  font-size: .875rem;
-  font-weight: 500;
-  letter-spacing: 0.06rem;
-  border: 2px solid transparent;
-  margin: 0 5px;
-  padding: 10px 8px;
-}
-
-.portfolio-filter a.active {
-  color: #3f50b5;
-  background-color: transparent;
-  border: 2px solid transparent;
-}
-
-.portfolio-filter a:hover {
-  color: #3f50b5;
-  background-color: transparent;
-  border: 2px solid transparent;
-}
-
-/*--- end of index / demo page ---*/
 /*------- templates -------*/
 /*------- media screens -------*/
 /*--- max-widths ---*/
