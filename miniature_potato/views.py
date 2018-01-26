@@ -13,8 +13,8 @@ def index(request):
 
 
 @login_required
-def home(request):
-    return render(request, 'home.html')
+def client(request):
+    return render(request, 'client.html')
 
 
 @login_required
@@ -58,7 +58,7 @@ def password(request):
             form.save()
             update_session_auth_hash(request, form.user)
             messages.success(request, 'Your password was successfully updated!')
-            return redirect('password')
+            return redirect('client')
         else:
             messages.error(request, 'Please correct the error below.')
     else:

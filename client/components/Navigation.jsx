@@ -26,13 +26,13 @@ class Navigation extends React.Component {
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item">
-						<Link to="/home" className="nav-link">Home</Link>
+						<Link to="/client" className="nav-link">Todo App</Link>
 					</li>
 					<li className="nav-item">
-						<Link to="/page_one" className="nav-link">Page One</Link>
+						<Link to="/client/location" className="nav-link">Location</Link>
 					</li>
 					<li className="nav-item">
-						<Link to="/page_two" className="nav-link">Page Two</Link>
+						<Link to="/client/page_two" className="nav-link">Page Two</Link>
 					</li>
 				</ul>
 					<div className="nav navbar-nav navbar-right">

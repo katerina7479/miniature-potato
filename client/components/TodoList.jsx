@@ -23,7 +23,7 @@ class TodoList extends React.Component {
     })),
     isFetching: PropTypes.bool,
     isSubmitting: PropTypes.bool,
-    error: PropTypes.obj,
+    error: PropTypes.shape({}),
     fetchTodos: PropTypes.func.isRequired,
   };
 

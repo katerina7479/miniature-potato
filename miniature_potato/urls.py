@@ -24,8 +24,6 @@ urlpatterns = [
     url(r'^auth$', drf_views.obtain_auth_token, name='auth'),
     url(r'^settings/$', app_views.settings, name='settings'),
     url(r'^settings/password/$', app_views.password, name='password'),
-    url(r'^home', app_views.home, name='home'),
+    url(r'^client/*', app_views.client, name='client'),
     url(r'^api/', include(router.urls)),
-    #url(r'^api/todos/$', api_views.TodoList.as_view()),
-    #url(r'^api/todos/(?P<pk>[0-9]+)/$', api_views.TodoDetail.as_view()),
 ]

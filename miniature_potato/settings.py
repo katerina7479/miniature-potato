@@ -162,7 +162,7 @@ django_heroku.settings(locals())
 # Login URLS
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'client'
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

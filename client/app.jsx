@@ -8,7 +8,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Navigation from 'Components/Navigation';
 import TodoApp from 'Components/TodoApp';
-import PageOne from 'Components/PageOne';
+import Geolocation from 'Components/Geolocation';
 import PageTwo from 'Components/PageTwo';
 
 import CoreReducer from 'Reducers/reducers';
@@ -25,9 +25,9 @@ ReactDOM.render(
 		<BrowserRouter>
   			<div>
 				<Navigation />
-    			<Route exact path="/home" component={TodoApp}/>
-    			<Route path="/page_one" component={PageOne}/>
-				<Route path="/page_two" component={PageTwo}/>
+    			<Route exact path="/client" component={TodoApp}/>
+    			<Route path="/client/location" component={Geolocation}/>
+				<Route path="/client/page_two" component={PageTwo}/>
 			</div>
 		</BrowserRouter>
 	</Provider>,
